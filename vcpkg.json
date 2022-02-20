@@ -1,5 +1,6 @@
 {
     "name": "fireworks",
+    "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json",
     "version-string": "0.1.0",
-    "dependencies": ["sdl2", "gtest", "glm"]
+    "dependencies": ["sdl2", "gtest", "glm", "fmt"]
 }
