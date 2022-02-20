@@ -1,0 +1,1 @@
+add_library(GameServer SHARED server.cpp)

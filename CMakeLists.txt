@@ -4,10 +4,14 @@ set(CMAKE_TOOLCHAIN_FILE "./vcpkg/scripts/buildsystems/vcpkg.cmake"
     CACHE STRING "")
 
 
-project(fireworks-engine CXX)
+project(SpaceGame CXX)
+
+if(MSVC)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+    set(BUILD_SHARED_LIBS TRUE)
+endif()
 
 find_package(SDL2 CONFIG REQUIRED)
+find_package(glm CONFIG REQUIRED)
 
-add_executable(test_exe main.cpp)
-
-target_link_libraries(test_exe PRIVATE SDL2::SDL2 SDL2::SDL2main)
+add_subdirectory(src)
