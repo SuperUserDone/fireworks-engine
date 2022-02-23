@@ -2,8 +2,13 @@
 #include <shared/logger.hpp>
 
 int main() {
-  std::cout << "A" << std::endl;
+  LOG_INIT();
 
-  do_log("{}");
+  LOG_E("{}", "MSG");
+  LOG_W("{}", "MSG");
+  LOG_I("{}", "MSG");
+  LOG_D("{}", "MSG");
+
+  LOG_CLOSE();
   return 0;
 }
