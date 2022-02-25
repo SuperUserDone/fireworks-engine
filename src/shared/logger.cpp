@@ -2,7 +2,10 @@
 #include <fmt/core.h>
 #include <stdio.h>
 
+#include <iostream>
+
 #include "logger.hpp"
+#include "paths.hpp"
 
 static FILE* g_logfile;
 
@@ -11,9 +14,13 @@ void init_file() {
   time_t now = time(nullptr);
 
   std::string logname =
-      fmt::format("logs/log-{:%Y%m%d_%H%M%S}.txt", fmt::localtime(now));
+      fmt::format("log-{:%Y%m%d_%H%M%S}.txt", fmt::localtime(now));
 
-  g_logfile = fopen(logname.c_str(), "w");
+  auto sp = paths::get_config().m_save_path;
+
+  sp /= ((std::filesystem::path("logs")) / (std::filesystem::path(logname)));
+
+  g_logfile = fopen(sp.string().c_str(), "w");
 }
 
 void write_file(const std::string& message) {

@@ -1,13 +1,12 @@
+// Public API of the IO System
 #pragma once
+
+#include "IOSettings.hpp"
 
 namespace IO {
 
 void init();
-void create_window();
 
-void render_circle();
-
-void destroy_window();
 void free();
 
 }  // namespace IO
