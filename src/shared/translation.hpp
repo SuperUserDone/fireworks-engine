@@ -10,7 +10,7 @@ namespace translation {
  *
  * \param lang_code code for the translation
  */
-extern void load_translation(const char* lang_code);
+extern void load_translation(const char *lang_code);
 
 /**
  * \brief Get the translated string
@@ -19,4 +19,4 @@ extern void load_translation(const char* lang_code);
  * \return const char* translated value
  */
 extern std::string get_translated(const translation_handle handle);
-}  // namespace translation
+} // namespace translation

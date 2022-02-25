@@ -6,11 +6,11 @@ static std::string translation_db[UINT16_MAX];
 
 namespace translation {
 
-void load_translation(const char* lang_code) {
+void load_translation(const char *lang_code) {
   auto bp = paths::get_config().m_base_path / "lang" /
             fmt::format("{}.csv", lang_code);
 
-  FILE* file = fopen(bp.string().c_str(), "r");
+  FILE *file = fopen(bp.string().c_str(), "r");
 
   while (!feof(file)) {
     uint32_t code;
@@ -19,7 +19,8 @@ void load_translation(const char* lang_code) {
 
     int n = sscanf(str, "%u;%65536[^\n]", &code, &str);
 
-    if (n != 2) continue;
+    if (n != 2)
+      continue;
 
     // Take the code MOD 16 bit unsigned int limit to avoid OOB memory writes
     uint16_t code16 = code % UINT16_MAX;
@@ -47,4 +48,4 @@ std::string get_translated(const translation_handle handle) {
   }
 }
 
-}  // namespace translation
+} // namespace translation

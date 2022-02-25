@@ -11,4 +11,4 @@ struct path_config {
 extern path_config get_config();
 extern void set_config(const path_config &path);
 
-}  // namespace paths
+} // namespace paths

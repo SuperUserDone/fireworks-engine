@@ -7,7 +7,7 @@
 #include "logger.hpp"
 #include "paths.hpp"
 
-static FILE* g_logfile;
+static FILE *g_logfile;
 
 namespace log_internal {
 void init_file() {
@@ -23,7 +23,7 @@ void init_file() {
   g_logfile = fopen(sp.string().c_str(), "w");
 }
 
-void write_file(const std::string& message) {
+void write_file(const std::string &message) {
   fprintf(g_logfile, "%s\n", message.c_str());
 }
 
@@ -32,4 +32,4 @@ void close_file() {
   fclose(g_logfile);
   g_logfile = nullptr;
 }
-}  // namespace log_internal
+} // namespace log_internal
