@@ -15,7 +15,12 @@ void load_translation(const char* lang_code) {
   while (!feof(file)) {
     uint32_t code;
     char str[65536];
-    fscanf(file, "%u;%65536[^\n]", &code, &str);
+    fgets(str, sizeof(str), file);
+
+    int n = sscanf(str, "%u;%65536[^\n]", &code, &str);
+
+    if (n != 2) continue;
+
     // Take the code MOD 16 bit unsigned int limit to avoid OOB memory writes
     uint16_t code16 = code % UINT16_MAX;
     translation_db[code16] = std::string(str);
