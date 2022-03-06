@@ -1,4 +1,4 @@
-include_directories(".")
+include_directories("." "glad/include")
 
 add_subdirectory(shared)
 add_subdirectory(server)

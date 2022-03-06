@@ -1,3 +1,20 @@
 0;Loaded English Translation
-;UI Stuff
-1;Window Title
+;Misc
+;Window Name
+1;Space Game
+;Loading screen
+2;Loading
+;Main Menu
+100;Singleplayer
+101;Multiplayer
+102;Settings
+103;Exit
+;Universe Screen
+200;Load Universe
+201;Create Universe
+;Settings Screen
+500;Settings
+501;Graphics
+502;Graphics Backend
+503;OpenGL
+510;Quality

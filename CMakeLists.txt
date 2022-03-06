@@ -24,6 +24,7 @@ endif()
 
 find_package(SDL2 CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
+find_package(GLEW REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 
 add_subdirectory(src)
